@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор Обмена</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>КАЛЬКУЛЯТОР</h1>
+        <form id="exchange-form">
+            <label for="giveCurrency">Валюта (Отдаю):</label>
+            <select id="giveCurrency" name="giveCurrency">
+                <option value="rub">Рубли</option>
+                <option value="thb">Баты</option>
+                <option value="usd">Доллары</option>
+                <option value="usdt">USDT</option>
+            </select>
+
+            <label for="receiveCurrency">Валюта (Получаю):</label>
+            <select id="receiveCurrency" name="receiveCurrency">
+                <option value="thb">Баты</option>
+                <option value="usd">Доллары</option>
+                <option value="usdt">USDT</option>
+            </select>
+
+            <label for="deliveryType">Тип выдачи:</label>
+            <select id="deliveryType" name="deliveryType">
+                <option value="atm">Банкомат</option>
+                <option value="delivery">Доставка (Таиланд)</option>
+                <option value="transfer">Перевод на счёт или оплата по QR</option>
+            </select>
+
+            <label for="conversionType">Способ расчёта:</label>
+            <select id="conversionType" name="conversionType">
+                <option value="rubToThb">У меня есть RUB, сколько получу в THB</option>
+                <option value="thbToRub">Мне нужны THB, сколько заплатить в RUB</option>
+            </select>
+
+            <label for="amount">Введите сумму:</label>
+            <input type="number" id="amount" name="amount" placeholder="Введите сумму" required>
+
+            <button type="submit" id="calculateBtn">Посчитать</button>
+        </form>
+
+        <div id="result" class="result hidden">
+            <h2>Результаты:</h2>
+            <p id="calculationResult"></p>
+            <button id="submitRequestBtn">Отправить заявку</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
