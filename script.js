@@ -5,12 +5,14 @@ document.getElementById('exchange-form').addEventListener('submit', function(eve
     const receiveCurrency = document.getElementById('receiveCurrency').value;
     const amount = parseFloat(document.getElementById('amount').value);
 
-    // Пример курсов обмена
     const exchangeRates = {
-        rub: { thb: 0.35, usd: 0.013, usdt: 0.012 },
-        thb: { rub: 2.85, usd: 0.03, usdt: 0.032 },
-        usd: { rub: 75, thb: 33, usdt: 1 },
-        usdt: { rub: 74, thb: 32, usd: 1 }
+        rub: { thb: 0.35, usd: 0.013, usdt_bep20: 0.012, usdt_trc20: 0.012, ton: 0.01, usdt_ton: 0.012, btc: 0.000002 },
+        thb: { rub: 2.85, usd: 0.03, usdt_bep20: 0.032, usdt_trc20: 0.032, ton: 0.03, usdt_ton: 0.032, btc: 0.00003 },
+        usdt_bep20: { rub: 74, thb: 32, usd: 1, usdt_trc20: 1, ton: 0.98, usdt_ton: 1, btc: 0.000027 },
+        usdt_trc20: { rub: 74, thb: 32, usd: 1, usdt_bep20: 1, ton: 0.98, usdt_ton: 1, btc: 0.000027 },
+        ton: { rub: 73, thb: 31, usd: 0.98, usdt_bep20: 1.02, usdt_trc20: 1.02, usdt_ton: 1.02, btc: 0.000028 },
+        usdt_ton: { rub: 74, thb: 32, usd: 1, usdt_bep20: 1, usdt_trc20: 1, ton: 0.98, btc: 0.000027 },
+        btc: { rub: 3700000, thb: 125000, usd: 36000, usdt_bep20: 37000, usdt_trc20: 37000, ton: 35000, usdt_ton: 37000 }
     };
 
     let result = 0;
