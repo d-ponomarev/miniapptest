@@ -14,19 +14,26 @@
             <select id="giveCurrency" name="giveCurrency">
                 <option value="rub">Рубли</option>
                 <option value="thb">Баты</option>
-                <option value="usd">Доллары</option>
-                <option value="usdt">USDT</option>
+                <option value="usdt_bep20">USDT (BEP20)</option>
+                <option value="usdt_trc20">USDT (TRC20)</option>
+                <option value="ton">TON</option>
+                <option value="usdt_ton">USDT (TON)</option>
+                <option value="btc">BTC</option>
             </select>
 
             <label for="receiveCurrency">Валюта (Получаю):</label>
             <select id="receiveCurrency" name="receiveCurrency">
+                <option value="rub">Рубли</option>
                 <option value="thb">Баты</option>
-                <option value="usd">Доллары</option>
-                <option value="usdt">USDT</option>
+                <option value="usdt_bep20">USDT (BEP20)</option>
+                <option value="usdt_trc20">USDT (TRC20)</option>
+                <option value="ton">TON</option>
+                <option value="usdt_ton">USDT (TON)</option>
+                <option value="btc">BTC</option>
             </select>
 
             <label for="amount">Введите сумму:</label>
-            <input type="number" id="amount" name="amount" placeholder="Введите сумму" required>
+            <input type="number" id="amount" style="width: 330px;" name="amount" placeholder="Введите сумму" required>
 
             <button type="submit" id="calculateBtn">Посчитать</button>
         </form>
