@@ -3,7 +3,6 @@ document.getElementById('exchange-form').addEventListener('submit', function(eve
 
     const giveCurrency = document.getElementById('giveCurrency').value;
     const receiveCurrency = document.getElementById('receiveCurrency').value;
-    const conversionType = document.getElementById('conversionType').value;
     const amount = parseFloat(document.getElementById('amount').value);
 
     // Пример курсов обмена
@@ -16,12 +15,10 @@ document.getElementById('exchange-form').addEventListener('submit', function(eve
 
     let result = 0;
 
-    if (conversionType === 'rubToThb' && giveCurrency === 'rub') {
-        result = amount * exchangeRates['rub'][receiveCurrency];
-    } else if (conversionType === 'thbToRub' && receiveCurrency === 'thb') {
-        result = amount / exchangeRates['rub'][receiveCurrency];
-    } else {
+    if (exchangeRates[giveCurrency] && exchangeRates[giveCurrency][receiveCurrency]) {
         result = amount * exchangeRates[giveCurrency][receiveCurrency];
+    } else if (exchangeRates[receiveCurrency] && exchangeRates[receiveCurrency][giveCurrency]) {
+        result = amount / exchangeRates[receiveCurrency][giveCurrency];
     }
 
     document.getElementById('calculationResult').innerText = `Результат обмена: ${result.toFixed(2)} ${receiveCurrency.toUpperCase()}`;
